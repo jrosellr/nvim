@@ -6,10 +6,6 @@ end
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
-  use({
-    'sainnhe/gruvbox-material'
-  })
-
   use({ "catppuccin/nvim", as = "catppuccin" })
 
   use({
