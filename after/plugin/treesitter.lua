@@ -3,12 +3,17 @@ if not treesitter_ok then
   return
 end
 
+vim.api.nvim_set_hl(0, "@type.qualifier.typescript", { link = "Keyword" })
+vim.api.nvim_set_hl(0, "@keyword.export.typescript", { link = "Keyword" })
+vim.api.nvim_set_hl(0, "@type.builtin.typescript", { link = "Keyword" })
+vim.api.nvim_set_hl(0, "@variable.builtin.typescript", { link = "Keyword" })
+vim.api.nvim_set_hl(0, "@lsp.type.interface.typescript", { link = "Type" })
+
 treesitter_configs.setup({
   ensure_installed = {
     "c",
     "lua",
     "vim",
-    "help",
     "query",
     "go"
   },
