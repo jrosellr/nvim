@@ -60,6 +60,13 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+local lsp_config_ok, lsp_config = pcall(require, 'lspconfig')
+if not lsp_config_ok then
+  return
+end
+
+lsp_config.angularls.setup {}
+
 lsp_zero.setup()
 
 vim.diagnostic.config({

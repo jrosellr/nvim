@@ -10,6 +10,8 @@ return packer.startup(function(use)
     'sainnhe/gruvbox-material'
   })
 
+  use({ "catppuccin/nvim", as = "catppuccin" })
+
   use({
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -39,6 +41,10 @@ return packer.startup(function(use)
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end
+  })
+
+  use({
+    'nvim-treesitter/playground'
   })
 
   use({
